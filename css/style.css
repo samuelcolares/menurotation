@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #333;
+    color: #222;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.container {
+    background-color: #fafafa;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+}
+
+.circle-container {
+    background-color: firebrick;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    left: -100px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 50%;
+    transition: 1s;
+}
+
+.circle-container > button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+}
+
+#open {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    justify-self: start;
+    align-self: flex-start;
+    position: relative;
+    top: 25px;
+    left: 25px;
+    /* transform: translate(25px, 25px); */
+}
+
+#close {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    justify-self: end;
+    align-self: flex-start;
+    position: relative;
+    top: 25px;
+    left: 25px;
+    transform: translate(-60px);
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+.circle-container.show-nav {
+    transform: rotate(-70deg);
+}
+nav.show-nav {
+    transform: translateX(0%);
+    transition: .6s ease-out;
+}
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.content p, .content h3 {
+    margin: 1em 0;
+}
+
+nav{
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    transform: translateX(-150%);
+    transition: .4s ease-in;
+}
+
+nav ul{
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+nav ul li{
+    display: flex;
+    gap: 10px;
+    color: white;
+    cursor: pointer;
+    transition: .5s ease-in;
+}
+
+nav ul li:hover{
+    transition: .3s ease-in;
+    color: firebrick;
+}
+
+nav ul li + li{
+    margin-left: 15px;
+}
+
+nav ul li + li + li{
+    margin-left: 30px;
+}
